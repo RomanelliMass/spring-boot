@@ -21,6 +21,12 @@ public class SoftwareEngineerController {
         return softwareEngineerService.getAllSoftwareEngineers();
     }
 
+    @GetMapping("{id}") //for retrieval use GET
+    public SoftwareEngineer getEngineerById(@PathVariable Integer id) {
+
+        return softwareEngineerService.getSoftwareEngineerById(id);
+    }
+
     @PostMapping
     public void addNewSoftwareEngineer(@RequestBody SoftwareEngineer softwareEngineer) {
         softwareEngineerService.insertSoftwareEngineer(softwareEngineer);
